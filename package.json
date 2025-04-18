@@ -1,0 +1,21 @@
+{
+  "name": "ogem-user-manual",
+  "version": "1.0.0",
+  "description": "O-GEM User Manual",
+  "main": "index.js",
+  "scripts": {
+    "start": "honkit serve",
+    "build": "honkit build",
+    "pdf": "honkit pdf",
+    "epub": "honkit epub",
+    "mobi": "honkit mobi"
+  },
+  "dependencies": {
+    "ebook-convert": "^2.0.1",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "honkit": "^3.7.5"
+  }
+}
