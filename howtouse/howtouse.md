@@ -60,4 +60,101 @@ For those TLFs that display macros hasn't covered currently (format is different
   * root/global_tools/oncology/o_gem/pgm/v1/tlf/doc<br>
   * [Online link](https://azcollaboration.sharepoint.com/sites/O-GEM2/Shared%20Documents/General/DXXXXXXXXXX_TiFo_MOSAIC_CONVERT.xlsm?d=w05acd47b84b94c40a5f821cd4e4e1a32&csf=1&web=1&e=udJVBD)<br>
 
+## 本地构建说明
+
+### 前置条件
+- Node.js (v12 或更高版本)
+- npm (通常随 Node.js 一起安装)
+- Git (用于版本控制和部署)
+
+### Windows 用户
+
+1. 打开命令提示符或 PowerShell，进入项目目录
+2. 安装依赖：
+   ```bash
+   npm install
+   ```
+3. 构建文档：
+   ```bash
+   # 方法1：使用批处理文件
+   build-honkit.bat
+   
+   # 方法2：直接使用 npm 命令
+   npm run build
+   ```
+4. 本地预览：
+   ```bash
+   # 方法1：使用批处理文件中的选项
+   # 运行 build-honkit.bat 并在提示时选择 'y'
+   
+   # 方法2：直接使用 npm 命令
+   npm run start
+   ```
+5. 部署到 GitHub Pages（如果需要）：
+   ```bash
+   deploy-to-github.bat
+   ```
+
+### macOS/Linux 用户
+
+1. 打开终端，进入项目目录
+2. 安装依赖：
+   ```bash
+   npm install
+   ```
+3. 构建文档：
+   ```bash
+   npm run build
+   ```
+4. 本地预览：
+   ```bash
+   npm run start
+   ```
+5. 部署到 GitHub Pages（如果需要）：
+   ```bash
+   # 确保脚本有执行权限
+   chmod +x deploy-to-github.sh
+   
+   # 运行部署脚本
+   ./deploy-to-github.sh
+   ```
+
+### 常见问题
+
+1. 如果遇到权限问题，尝试使用 sudo（仅限 macOS/Linux）：
+   ```bash
+   sudo npm install
+   ```
+
+2. 如果遇到端口占用问题，可以通过环境变量指定端口：
+   ```bash
+   # Windows (CMD)
+   set PORT=4001 && npm run start
+   
+   # Windows (PowerShell)
+   $env:PORT=4001; npm run start
+   
+   # macOS/Linux
+   PORT=4001 npm run start
+   ```
+
+3. 如果构建过程中遇到内存不足问题：
+   ```bash
+   # Windows (CMD)
+   set NODE_OPTIONS=--max-old-space-size=4096 && npm run build
+   
+   # Windows (PowerShell)
+   $env:NODE_OPTIONS="--max-old-space-size=4096"; npm run build
+   
+   # macOS/Linux
+   NODE_OPTIONS=--max-old-space-size=4096 npm run build
+   ```
+
+### 注意事项
+
+- 本地预览时，文档服务器默认运行在 http://localhost:4000
+- 修改文件后，本地预览会自动刷新
+- 部署到 GitHub Pages 之前，请确保所有更改已提交到 Git
+- 首次部署到 GitHub Pages 可能需要几分钟才能生效
+
 

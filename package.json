@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "honkit serve",
-    "build": "honkit build",
+    "build": "rimraf _book && honkit build",
     "pdf": "honkit pdf",
     "epub": "honkit epub",
-    "mobi": "honkit mobi"
+    "mobi": "honkit mobi",
+    "deploy": "node -e \"process.platform === 'win32' ? require('child_process').execSync('deploy-to-github.bat') : require('child_process').execSync('bash deploy-to-github.sh')\""
   },
   "dependencies": {
     "ebook-convert": "^2.0.1",
@@ -17,5 +18,8 @@
     "gitbook-plugin-expandable-chapters": "^0.2.0",
     "gitbook-plugin-search-pro": "^2.0.2",
     "honkit": "^3.7.5"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
   }
 }
