@@ -23,6 +23,7 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+temp/
 .cache/
 
 # Build artifacts
@@ -33,5 +34,4 @@ build/
 coverage/
 
 # Misc
-*.bak
-*.temp 
+*.bak 

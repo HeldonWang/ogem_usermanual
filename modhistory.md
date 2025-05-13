@@ -52,4 +52,20 @@
 - Monitor and address remaining deprecation warnings
 - Consider updating deprecated dependencies
 - Document common troubleshooting steps
-- Review and optimize plugin configurations 
+- Review and optimize plugin configurations
+
+## 2025-05-09: Documentation Structure Optimization
+
+### Changes Made:
+1. Migrated all developer-related content (project intro, setup, contribution guide, etc.) from README.md to a new file: developer_readme.md
+2. README.md now only contains user manual content for end users/readers
+3. Improved documentation clarity and separation of concerns
+
+### Benefits:
+- Developers can easily find project setup and contribution information in developer_readme.md
+- End users/readers see a clean, focused manual in README.md
+- Documentation is easier to maintain and more user-friendly
+
+### Next Steps:
+- Keep developer_readme.md updated with any future development or contribution changes
+- Continue to optimize user manual content for clarity and usability 
