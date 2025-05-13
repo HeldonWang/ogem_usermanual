@@ -1,18 +1,18 @@
 # Syntax
 
 %m_u_binom_adjrate (<br>
-[***inds***=&lt;input-dataset&gt;](#inds), <br>
-[***outds***=&lt;output-dataset&gt;](#outds),<br>
-[***trtgrpn***=&lt;numeric-treatment-group-variable&gt;](#trtgrpn),<br>
-[***strata***=&lt;statification-variable&gt;](#strata),<br>
-[***where***=&lt;where-condition&gt;](#where),<br> 
-[***popfl***=&lt;population-flag-condition&gt;](#popfl),<br>
-[***var***=&lt;analysis-variable&gt;](#var),<br>
-[***event***=&lt;positive-event-value&gt;](#event),<br>
-[***alpha***=&lt;alpha-level&gt;](#alpha),<br>
-[***missval***=&lt;missing-value-display-text&gt;](#missval),<br>
-[***cidecim***=&lt;confidence-interval-decimal-place&gt;](#cidecim),<br>
-[***debug***=&lt;Y|N&gt;](#debug)<br>
+[***inds***=<input-dataset>](#inds), <br>
+[***outds***=<output-dataset>](#outds),<br>
+[***trtgrpn***=<numeric-treatment-group-variable>](#trtgrpn),<br>
+[***strata***=<stratification-variable>](#strata),<br>
+[***where***=<where-condition>](#where),<br> 
+[***popfl***=<population-flag-condition>](#popfl),<br>
+[***var***=<analysis-variable>](#var),<br>
+[***event***=<positive-event-value>](#event),<br>
+[***alpha***=<alpha-level>](#alpha),<br>
+[***missval***=<missing-value-display-text>](#missval),<br>
+[***cidecim***=<confidence-interval-decimal-place>](#cidecim),<br>
+[***debug***=<Y|N>](#debug)<br>
 );
    
 
@@ -31,6 +31,18 @@ Requirement|Mandatory
 Restriction|
 Interaction|
 Eg.|`anl` <br>`work.anl`
+
+#### outds
+specifies the output data set name. If not specified, the output will be named `final_adjrate` by default.
+
+Item|Contents
+:---|:---
+Default|final_adjrate
+Value|A valid SAS dataset name
+Requirement|Optional
+Restriction|
+Interaction|
+Eg.|`test`
 
 #### where
 specifies the where condition applied on `inds` analysis dataset.
@@ -55,7 +67,6 @@ Requirement|Mandatory
 Restriction|
 Interaction| 
 Eg.|`ittfl='Y'` <br>
-
 
 
 ## Control analysis
@@ -113,12 +124,12 @@ specifies the alpha level for confidence interval.
 
 Item|Contents
 :---|:---
-Default|.05
+Default|0.05
 Value| 
 Requirement|Optional
 Restriction|
 Interaction|  
-Eg.|`.05`
+Eg.|`0.05`
 
 #### cidecim
 specifies the decimal places to keep for confidence intervals.
@@ -146,30 +157,18 @@ Restriction|
 Interaction| 
 Eg.|`NE` <br>
 
-#### ord
-specifies the order of the content of the treatment group information, for sorting use in later steps. 
-
-Item|Contents
-:---|:---
-Default|
-Value|
-Requirement|Mandatory
-Restriction|Input type of `ord` must be numeric
-Interaction|
-Eg.|`1`
-
 ## Control debug
 
 #### debug
-specifies whether need to debug or not, if not "Y" then intermediate datasets will be deleted. If leave it as null or not to state it, the default values will be used.<br>
+specifies whether need to debug or not. If not "Y" (case-insensitive), the intermediate datasets will be deleted. Default is N.
 
 Item|Contents
 :---|:---
-Default|`N`
-Value|`Y, N` (not case sensitive)
+Default|N
+Value|Y, N (not case sensitive)
 Requirement|Optional
 Restriction|
 Interaction|
-Eg.|`N`
+Eg.|N
 
 ---
